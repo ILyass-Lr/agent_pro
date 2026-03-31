@@ -1,0 +1,128 @@
+name: agent_pro
+description: >
+  An AI-driven football management for agents. Facilitates player-club
+  matching, contract negotiation tracking, and automated communication using Clean Architecture, Riverpod, and TDD.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- state management & di ---
+  flutter_riverpod: 3.1.0
+  riverpod: 3.1.0
+  riverpod_annotation: ^4.0.0
+
+  # --- data & models ---
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+  equatable: ^2.0.8
+
+  # --- functional programming ---
+  fpdart: ^1.2.0
+
+  # --- remote api & networking ---
+  dio: ^5.9.0
+  connectivity_plus: ^7.0.0
+  internet_connection_checker_plus: ^2.9.1+2
+
+  # --- storage ---
+  flutter_secure_storage: ^10.0.0
+  shared_preferences: ^2.5.4
+  drift: ^2.31.0
+  drift_flutter: ^0.2.8
+
+  # --- utils ---
+  google_fonts: ^8.0.1
+  smooth_page_indicator: ^2.0.1
+  flutter_native_splash: ^2.4.7
+  flutter_svg: ^2.2.3
+  intl_phone_field: ^3.2.0
+  file_picker: ^10.3.10
+  path_provider: ^2.1.5
+  pinput: ^6.0.2
+
+  # --- navigation ---
+  go_router: ^17.1.0
+  meta: ^1.17.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # --- linting ---
+  flutter_lints: ^4.0.0
+
+  # --- code generation
+  build_runner: ^2.10.5
+  riverpod_generator: ^4.0.0+1
+  freezed: ^3.1.0
+  json_serializable: ^6.10.0
+  drift_dev: ^2.31.0
+
+  # --- testing ---
+  mocktail: ^1.0.4
+
+  # --- ios icons
+  cupertino_icons: ^1.0.8
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+flutter_native_splash:
+  #======================================================================
+
+  # uncomment this if you want to disable this package for specific platform:
+  # android: false
+  # ios: false
+  # web: false
+
+  #======================================================================
+
+  #! FOR ALL PLATFORM, except Android 12+:
+
+  color: "#FFF8F7" ##====================================[REQUIRED]==========
+  #color_dark: "#042a49"
+
+  image: assets/images/logo.png
+  #image_dark:          assets/splash-invert.png
+
+  # hide notif bar on android. ios already hides it by default.
+  # Has no effect in web since web has no notification bar.
+  fullscreen: true # default false
+  # if you dont want to hide notif bar, for android just set this to false,
+  # but for ios, add this to your flutter main():
+  # WidgetsFlutterBinding.ensureInitialized();
+  # SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top], );
+
+  #! extra note for IOS:
+  # If you have changed the name(s) of your info.plist file(s), you can specify the filename(s)
+  # with the info_plist_files parameter.  Remove only the # characters in the three lines below,
+  # do not remove any spaces:
+  #info_plist_files:
+  #  - 'ios/Runner/Info-Debug.plist'
+  #  - 'ios/Runner/Info-Release.plist'
+
+  #========================================================================
+
+  #! ANDROID 12+ configuration:
+  android_12:
+    color: "#FFF8F7"
+    # color_dark: "#042a49"
+
+    image: assets/images/logo.png
+    # image_dark: assets/images/logo/logo-splash2.png
+
+    # center-logo background color
+    icon_background_color: "#FFF8F7"
+    # icon_background_color_dark: "#eeeeee"

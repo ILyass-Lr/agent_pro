@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Flutter (Android Emulator)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": ["--dart-define=API_HOST=10.0.2.2", "--dart-define=API_PORT=8000"]
+    },
+    {
+      "name": "Flutter (Real Device - LAN)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=API_HOST=${input:apiHost}",
+        "--dart-define=API_PORT=${input:apiPort}"
+      ]
+    },
+    {
+      "name": "Flutter (Custom API_BASE_URL)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": ["--dart-define=API_BASE_URL=${input:apiBaseUrl}"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "apiHost",
+      "type": "promptString",
+      "description": "API host/IP (for real device, use your computer LAN IP)",
+      "default": "10.89.162.248"
+    },
+    {
+      "id": "apiPort",
+      "type": "promptString",
+      "description": "API port",
+      "default": "8000"
+    },
+    {
+      "id": "apiBaseUrl",
+      "type": "promptString",
+      "description": "Full API base URL (example: http://10.89.162.248:8000/api/v1/fr)",
+      "default": "http://10.89.162.248:8000/api/v1/fr"
+    }
+  ]
+}

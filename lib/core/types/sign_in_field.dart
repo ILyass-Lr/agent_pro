@@ -1,0 +1,1 @@
+enum SignInField { email, password }
